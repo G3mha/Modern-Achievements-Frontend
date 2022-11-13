@@ -3,20 +3,15 @@ import './NavBar.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Row, Col, Navbar, NavbarBrand, Button, Form, FormGroup, Input, ButtonGroup } from 'reactstrap';
 import { AiOutlineSearch } from 'react-icons/ai';
-import Logo from '../Images/Logo.png';
+import Logo from '../../Images/Logo.png';
 
-
-const LogoStyle = {
-    height: "50px",
-    width: "50px"
-};
 
 class NavBar extends Component {
     render() {
         return (
             <Navbar color='dark'>
-                <NavbarBrand href="/">
-                    <img alt="Modern Achivements" src={Logo} style={LogoStyle} />
+                <NavbarBrand className='left-padding' href="/">
+                    <img alt="Modern Achivements" src={Logo} style={{height: "50px", width: "50px"}} />
                 </NavbarBrand>
                 
                 <Form className='space'>
@@ -34,14 +29,13 @@ class NavBar extends Component {
                     </Row>
                 </Form>
 
-                <ButtonGroup>
-                    <Button outline color="primary" className='btn-login'>SIGN UP</Button>
-                    <Button color="primary" className='btn-login'>SIGN IN</Button>
+                <ButtonGroup className='right-padding'>
+                    <Button href='/signup' color="primary" className='btn-login'>SIGN UP</Button>
+                    <Button href='/login' color="primary" className='btn-login'>LOG IN</Button>
                 </ButtonGroup>
-
             </Navbar>
         );
     }
-};
+}
 
 export default NavBar;

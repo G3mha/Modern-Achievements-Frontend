@@ -1,3 +1,11 @@
+.left-padding {
+    padding-left: 3%;
+}
+
+.right-padding {
+    padding-right: 3%;
+}
+
 .no-gutter {
     --bs-gutter-x: 0rem !important;
 }
