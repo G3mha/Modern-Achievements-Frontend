@@ -1,13 +1,13 @@
-.login-fullpage {
+.search-fullpage {
     height: 80vh;
     width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f5f5f5;
+    background-color: #212529;
 }
 
-.login-flex {
+.search-flex {
     height: 50vh;
     width: 50vw;
     border: 1px solid #e0e0e0;
