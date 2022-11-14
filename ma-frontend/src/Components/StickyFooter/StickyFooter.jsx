@@ -13,7 +13,7 @@ class StickyFooter extends Component {
                     This project was developed by Enricco Gemha, Eric Possato and Pedro Bittar.
                 </p>
                 <p className='secondary'>
-                    Copyright © <a href='/'>Modern Achievements</a> {new Date().getFullYear()}.
+                    Copyright © <a className='footer-link' href='/'>Modern Achievements</a> {new Date().getFullYear()}.
                 </p>
             </div>
         );
