@@ -1,0 +1,21 @@
+.unf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    background-color: #212529;
+}
+
+.unf-john-travolta {
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+.unf-title {
+    padding: 0 !important;
+    font-family: 'Raleway', sans-serif;
+    font-size: 10vh;
+    color: #9a36ff;
+    font-weight: bold;
+}

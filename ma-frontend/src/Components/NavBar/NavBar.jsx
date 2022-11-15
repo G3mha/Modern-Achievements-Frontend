@@ -1,8 +1,8 @@
-import React, { Component, useState } from 'react';
+import React, { useState } from 'react';
 import './NavBar.css';
 import { AiOutlineSearch } from 'react-icons/ai';
 import Logo from '../../Images/Logo.png';
-import axios from "axios";
+import axios from 'axios';
 
 
 function NavBar() {
@@ -23,23 +23,22 @@ function NavBar() {
                     'Accept': 'application/json',
                 },
             };
-            const response = await axios(request);
-            return response.data;
+            // the backend will redirect to users list page or user not found
         }
     };
 
     return (
-        <nav className='navbar'>
+        <div className='navbar'>
             <a href='/'><img className='navbar-logo' src={Logo} alt='logo' /></a>
             <form autoComplete='off' onSubmit={(e)=>handleSearch(e)}>
                 <input className='navbar-input' type='text' name='search' placeholder='Search for other brave members using their usernames!' />
                 <button className='navbar-btn navbar-search' type='submit'><AiOutlineSearch /></button>
             </form>
             <div className='navbar-btn-group'>
-                <button className='navbar-btn' href='/signup'>SIGN UP</button>
-                <button className='navbar-btn' href='/login'>LOG IN</button>
+                <a href='/signup'><button type='button' className='navbar-btn'>SIGN UP</button></a>
+                <a href='/login'><button type='button' className='navbar-btn'>LOG IN</button></a>
             </div>
-        </nav>
+        </div>
     );
 }
 

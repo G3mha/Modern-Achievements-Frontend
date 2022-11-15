@@ -10,7 +10,7 @@
 .login-flex {
     height: 50vh;
     width: 50vw;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #e9e9e9;
     border-style: solid;
     display: flex;
     flex-direction: column;
@@ -31,7 +31,7 @@
 .login-form input {
     width: 40vw;
     height: 5vh;
-    border: 1px solid #e0e0e0;
+    border: 1px solid #e9e9e9;
     border-style: solid;
     border-radius: 5px;
     margin: 1vh;
