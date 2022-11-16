@@ -20,7 +20,7 @@ function App() {
             	<Route exact path="/" element={<Home />} />
             	<Route path="/login/" element={<LogIn />} />
             	<Route path="/signup/" element={<SignUp />} />
-            	<Route path="/search/users" element={<Users />} />
+            	<Route path="/search/user" element={<Users />} />
             	<Route path="/search/usernotfound" element={<UserNotFound />} />
         	</Routes>
 		</BrowserRouter>

@@ -23,7 +23,16 @@ function NavBar() {
                     'Accept': 'application/json',
                 },
             };
-            // the backend will redirect to users list page or user not found
+            const response = await axios(request);
+            if (response.status === 200) {
+                const games = response.data.games;
+                const username = response.data.user.username;
+                window.location.href = '/search/user/' + username;
+            }
+            if (response.status === 404) {
+                window.location.href = '/search/usernotfound';
+            }
+            return null;
         }
     };
 
