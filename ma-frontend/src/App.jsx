@@ -10,6 +10,7 @@ import LogIn from "./Pages/LogIn/LogIn";
 import SignUp from "./Pages/SignUp/SignUp";
 import Users from "./Pages/Users/Users";
 import UserNotFound from "./Pages/Users/UserNotFound";
+import SignUpSuccess from "./Pages/SignUp/SignUpSuccess";
 
 function App() {
   	return (
@@ -22,6 +23,7 @@ function App() {
             	<Route path="/signup/" element={<SignUp />} />
             	<Route path="/search/user" element={<Users />} />
             	<Route path="/search/usernotfound" element={<UserNotFound />} />
+				<Route path="/accounts/login/success" element={<SignUpSuccess />} />
         	</Routes>
 		</BrowserRouter>
 		<StickyFooter />
