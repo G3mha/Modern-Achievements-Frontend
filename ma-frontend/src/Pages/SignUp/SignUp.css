@@ -85,3 +85,20 @@
     font-weight: bold;
     text-decoration: none;
 }
+
+.loading-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100vw;
+    background-color: #212529;
+}
+
+
+.loading-message {
+    font-size: 3vh;
+    font-weight: bold;
+    color: #9a36ff;
+}

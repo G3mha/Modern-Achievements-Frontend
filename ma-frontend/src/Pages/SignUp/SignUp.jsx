@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './SignUp.css';
 import Logo from "../../Images/Logo.png";
 import SteamLogo from "../../Images/SteamLogo.png";
+import Loader from "../../Images/Loader.gif";
 import axios from 'axios';
 
 
@@ -16,24 +17,26 @@ function SignUp() {
     const [steamUsername, setSteamUsername] = useState('');
     const [isError, setIsError] = useState('');
     const [message, setMessage] = useState('');
+    const [isLoading, setIsLoading] = useState('');
 
     async function handleSignUp(e) {
         if(e) e.preventDefault();
 
+        setFirstName(e.target[0].value);
+        setLastName(e.target[1].value);
+        setEmail(e.target[2].value);
+        setUsername(e.target[3].value);
+        setPassword(e.target[4].value);
+        setPasswordConfirm(e.target[5].value);
+        setSteamUsername(e.target[6].value);
+        
         if(password !== passwordConfirm) {
             setIsError(true);
             setMessage('Passwords do not match');
             return;
         }
         if (username !== '' && password !== '' && passwordConfirm !== '' && email !== '' && firstName !== '' && lastName !== '' && steamUsername !== '') {
-            setFirstName(e.target[0].value);
-            setLastName(e.target[1].value);
-            setEmail(e.target[2].value);
-            setUsername(e.target[3].value);
-            setPassword(e.target[4].value);
-            setPasswordConfirm(e.target[5].value);
-            setSteamUsername(e.target[6].value);
-
+            setIsLoading(true);
             var request = {
                 method: 'POST',
                 url: 'http://127.0.0.1:8000/accounts/signup/',
@@ -57,6 +60,7 @@ function SignUp() {
                 window.location.href = '/accounts/login/success';
                 return;
             }
+            setIsLoading(false);
             if (response.data.HttpStatusCode === 404) {
                 setIsError(true);
                 setMessage(response.data.message);
@@ -67,7 +71,13 @@ function SignUp() {
 
     return (
         <div className='signup-fullpage'>
-            <div className='signup-flex'>
+            {isLoading && <div className='loading-page'>
+                <img className='loading-icon' src={Loader} alt='logo' />
+                <h1 className='loading-message'>Loading your Steam Account data...</h1>
+                <h1 className='loading-message'>Please, do not close or recharge this page until the upload is completed.</h1>
+                </div>
+            }
+            {!isLoading && <div className='signup-flex'>
                 <img src={Logo} alt='logo' style={{height: '50px', width: '50px'}} />
                 <h1>Create your account</h1>
                 {isError &&
@@ -96,7 +106,8 @@ function SignUp() {
                         <button className='signup-btn-submit' type='submit'>Create</button>
                     </div>
                 </form>
-            </div>
+                </div>
+            }
         </div>
     );
 }
