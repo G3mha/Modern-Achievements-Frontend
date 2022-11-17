@@ -8,8 +8,8 @@
 }
 
 .signup-flex {
-    height: 65vh;
-    width: 50vw;
+    height: 75vh;
+    width: 55vw;
     border: 1px solid #e0e0e0;
     border-style: solid;
     display: flex;
@@ -31,7 +31,9 @@
 .signup-large-input {
     width: 41vw !important;
     height: 5vh !important;
-    margin-top: 3vh !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-bottom: 5vh !important;
 }
 
 .signup-form input {
@@ -52,6 +54,13 @@
 
 .signup-redirect-link:hover {
     color: #9a36ff;
+}
+
+.signup-error-msg {
+    color: red;
+    font-weight: bold;
+    font-size: 3vh;
+    margin-bottom: 2vh !important;
 }
 
 .signup-btn-submit {
