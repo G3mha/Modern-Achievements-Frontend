@@ -1,6 +1,5 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import React, { useState } from "react";
 
 import NavBar from "./Components/NavBar/NavBar";
 import StickyFooter from "./Components/StickyFooter/StickyFooter";
