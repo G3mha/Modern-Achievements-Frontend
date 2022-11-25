@@ -5,9 +5,7 @@ import SteamLogo from "../../Images/SteamLogo.png";
 import Loader from "../../Images/Loader.gif";
 import axios from 'axios';
 
-
 function SignUp() {
-
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -57,6 +55,9 @@ function SignUp() {
             if (response.data.HttpStatusCode === 200) {
                 setIsError(false);
                 setMessage('Success!');
+                const userToken = response.data.token;
+                sessionStorage.setItem('token', JSON.stringify(userToken));
+                console.log('success');
                 window.location.href = '/accounts/login/success';
                 return;
             }

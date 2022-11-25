@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import './NavBar.css';
 import { AiOutlineSearch } from 'react-icons/ai';
+import { AiOutlineUser } from 'react-icons/ai';
+import './NavBar.css';
 import Logo from '../../Images/Logo.png';
 import axios from 'axios';
 
 
-function NavBar() {
+
+function NavBar({loggedIn}) {
     const [searchTerm, setSearchTerm] = useState('');
 
     // function that sends a request to the server with the search term on body
@@ -43,10 +45,13 @@ function NavBar() {
                 <input className='navbar-input' type='text' name='search' placeholder='Search for other brave members using their usernames!' />
                 <button className='navbar-btn navbar-search' type='submit'><AiOutlineSearch /></button>
             </form>
-            <div className='navbar-btn-group'>
+            {!loggedIn ? <>
+                <div className='navbar-btn-group'>
                 <a href='/signup'><button type='button' className='navbar-btn'>SIGN UP</button></a>
                 <a href='/login'><button type='button' className='navbar-btn'>LOG IN</button></a>
-            </div>
+                </div>
+            </> : <a href='/profile'><button type='button' className='navbar-btn'><AiOutlineUser /></button></a>
+            }
         </div>
     );
 }
