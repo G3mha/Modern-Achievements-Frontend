@@ -10,22 +10,18 @@ import React, { useState } from 'react';
 import SignUp from "./Pages/SignUp/SignUp";
 import Users from "./Pages/Users/Users";
 import UserNotFound from "./Pages/Users/UserNotFound";
-import SignUpSuccess from "./Pages/SignUp/SignUpSuccess";
 
 function getLogged() {
-    const tokenString = sessionStorage.getItem('token');
-    const userToken = JSON.parse(tokenString);
-    try {
-        if (userToken.token) {
-            return true;
-        }
-    }
-    catch (e) {
-        return false;
-    }
+    const tokenString = localStorage.getItem('token');
+	if (tokenString) {
+		return true;
+	}
+	return false;
 }
 function App() {
-	const isLogged = getLogged();
+    const [isLogged, setIsLogged] = useState(getLogged());
+
+
   	return (
 		<>
 			<NavBar loggedIn={isLogged} />
@@ -33,10 +29,9 @@ function App() {
 				<Routes>
 					<Route exact path="/" element={<Home />} />
 					<Route path="/login/" element={<LogIn />} />
-					<Route path="/signup/" element={<SignUp />} />
+					<Route path="/signup/" element={<SignUp isLogged={isLogged} setIsLogged={setIsLogged}/>} />
 					<Route path="/search/user" element={<Users />} />
 					<Route path="/search/usernotfound" element={<UserNotFound />} />
-					<Route path="/accounts/login/success" element={<SignUpSuccess />} />
 				</Routes>
 			</BrowserRouter>
 			<StickyFooter />

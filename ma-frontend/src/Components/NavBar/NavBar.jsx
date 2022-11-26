@@ -6,7 +6,6 @@ import Logo from '../../Images/Logo.png';
 import axios from 'axios';
 
 
-
 function NavBar({loggedIn}) {
     const [searchTerm, setSearchTerm] = useState('');
 
@@ -27,7 +26,6 @@ function NavBar({loggedIn}) {
             };
             const response = await axios(request);
             if (response.status === 200) {
-                const games = response.data.games;
                 const username = response.data.user.username;
                 window.location.href = '/search/user/' + username;
             }

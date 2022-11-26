@@ -4,8 +4,9 @@ import Logo from "../../Images/Logo.png";
 import SteamLogo from "../../Images/SteamLogo.png";
 import Loader from "../../Images/Loader.gif";
 import axios from 'axios';
+import SignupSuccessGIF from '../../Images/SignupSuccess.gif';
 
-function SignUp() {
+function SignUp({setIsLogged, isLogged}) {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -16,6 +17,7 @@ function SignUp() {
     const [isError, setIsError] = useState('');
     const [message, setMessage] = useState('');
     const [isLoading, setIsLoading] = useState('');
+
 
     async function handleSignUp(e) {
         if(e) e.preventDefault();
@@ -56,13 +58,13 @@ function SignUp() {
                 setIsError(false);
                 setMessage('Success!');
                 const userToken = response.data.token;
-                sessionStorage.setItem('token', JSON.stringify(userToken));
-                console.log('success');
-                window.location.href = '/accounts/login/success';
+                localStorage.setItem('token', JSON.stringify(userToken));
+                setIsLogged(true);
+                setIsLoading(false);
                 return;
             }
             setIsLoading(false);
-            if (response.data.HttpStatusCode === 404) {
+            if (response.data.HttpStatusCode !== 200) {
                 setIsError(true);
                 setMessage(response.data.message);
                 return;
@@ -78,7 +80,7 @@ function SignUp() {
                 <h1 className='loading-message'>Please, do not close or recharge this page until the upload is completed.</h1>
                 </div>
             }
-            {!isLoading && <div className='signup-flex'>
+            {!isLoading && !isLogged && <div className='signup-flex'>
                 <img src={Logo} alt='logo' style={{height: '50px', width: '50px'}} />
                 <h1>Create your account</h1>
                 {isError &&
@@ -107,6 +109,11 @@ function SignUp() {
                         <button className='signup-btn-submit' type='submit'>Create</button>
                     </div>
                 </form>
+                </div>
+            }
+            {isLogged && <div className='signup-success'>
+                    <h1 className='signup-success-title'>You're part of this adventure now!</h1>
+                    <img className='signup-success-gif' src={SignupSuccessGIF} alt='Signup Success' />
                 </div>
             }
         </div>
