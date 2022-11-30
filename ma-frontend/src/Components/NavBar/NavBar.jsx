@@ -43,13 +43,13 @@ function NavBar({loggedIn}) {
                 <input className='navbar-input' type='text' name='search' placeholder='Search for other brave members using their usernames!' />
                 <button className='navbar-btn navbar-search' type='submit'><AiOutlineSearch /></button>
             </form>
-            {!loggedIn ? <>
-                <div className='navbar-btn-group'>
-                <a href='/signup'><button type='button' className='navbar-btn'>SIGN UP</button></a>
-                <a href='/login'><button type='button' className='navbar-btn'>LOG IN</button></a>
-                </div>
-            </> : <a href='/profile'><button type='button' className='navbar-btn'><AiOutlineUser /></button></a>
-            }
+            <div className='navbar-btn-group'>
+                {!loggedIn ? <>
+                    <a href='/signup'><button type='button' className='navbar-btn'>SIGN UP</button></a>
+                    <a href='/login'><button type='button' className='navbar-btn'>LOG IN</button></a>
+                </> : <a href='/profile'><button type='button' className='navbar-btn'><AiOutlineUser /></button></a>
+                }
+            </div>
         </div>
     );
 }
