@@ -18,10 +18,8 @@ function SignUp({setIsLogged, isLogged}) {
     const [message, setMessage] = useState('');
     const [isLoading, setIsLoading] = useState('');
 
-
     async function handleSignUp(e) {
         if(e) e.preventDefault();
-
         setFirstName(e.target[0].value);
         setLastName(e.target[1].value);
         setEmail(e.target[2].value);
@@ -29,17 +27,12 @@ function SignUp({setIsLogged, isLogged}) {
         setPassword(e.target[4].value);
         setPasswordConfirm(e.target[5].value);
         setSteamUsername(e.target[6].value);
-        
-        if(password !== passwordConfirm) {
-            setIsError(true);
-            setMessage('Passwords do not match');
-            return;
-        }
+
         if (username !== '' && password !== '' && passwordConfirm !== '' && email !== '' && firstName !== '' && lastName !== '' && steamUsername !== '') {
             setIsLoading(true);
             var request = {
                 method: 'POST',
-                url: 'http://127.0.0.1:8000/accounts/signup/',
+                url: 'http://127.0.0.1:8000/api/signup/',
                 data: {
                     'first_name': firstName,
                     'last_name': lastName,
@@ -78,14 +71,11 @@ function SignUp({setIsLogged, isLogged}) {
                 <img className='loading-icon' src={Loader} alt='logo' />
                 <h1 className='loading-message'>Loading your Steam Account data...</h1>
                 <h1 className='loading-message'>Please, do not close or recharge this page until the upload is completed.</h1>
-                </div>
-            }
+            </div>}
             {!isLoading && !isLogged && <div className='signup-flex'>
                 <img src={Logo} alt='logo' style={{height: '50px', width: '50px'}} />
                 <h1>Create your account</h1>
-                {isError &&
-                    <h2 className='signup-error-msg'>{message}</h2>
-                }
+                {isError && <h2 className='signup-error-msg'>{message}</h2>}
                 <form className='signup-form' onSubmit={(e)=>handleSignUp(e)}>
                     <div className='signup-column-wrapper'>
                         <input type='text' name='firstname' placeholder='First Name' />
@@ -109,13 +99,11 @@ function SignUp({setIsLogged, isLogged}) {
                         <button className='signup-btn-submit' type='submit'>Create</button>
                     </div>
                 </form>
-                </div>
-            }
+            </div>}
             {isLogged && <div className='signup-success'>
-                    <h1 className='signup-success-title'>You're part of this adventure now!</h1>
-                    <img className='signup-success-gif' src={SignupSuccessGIF} alt='Signup Success' />
-                </div>
-            }
+                <h1 className='signup-success-title'>You're part of this adventure now!</h1>
+                <img className='signup-success-gif' src={SignupSuccessGIF} alt='Signup Success' />
+            </div>}
         </div>
     );
 }

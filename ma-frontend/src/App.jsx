@@ -28,7 +28,7 @@ function App() {
 			<BrowserRouter>
 				<Routes>
 					<Route exact path="/" element={<Home />} />
-					<Route path="/login/" element={<LogIn />} />
+					<Route path="/login/" element={<LogIn isLogged={isLogged} setIsLogged={setIsLogged}/>} />
 					<Route path="/signup/" element={<SignUp isLogged={isLogged} setIsLogged={setIsLogged}/>} />
 					<Route path="/search/user" element={<Users />} />
 					<Route path="/search/usernotfound" element={<UserNotFound />} />

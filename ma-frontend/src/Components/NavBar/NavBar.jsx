@@ -41,13 +41,13 @@ function NavBar({loggedIn}) {
             <a href='/'><img className='navbar-logo' src={Logo} alt='logo' /></a>
             <form autoComplete='off' onSubmit={(e)=>handleSearch(e)}>
                 <input className='navbar-input' type='text' name='search' placeholder='Search for other brave members using their usernames!' />
-                <button className='navbar-btn navbar-search' type='submit'><AiOutlineSearch /></button>
+                <button className='navbar-btn navbar-btn-search' type='submit'><AiOutlineSearch /></button>
             </form>
             <div className='navbar-btn-group'>
                 {!loggedIn ? <>
                     <a href='/signup'><button type='button' className='navbar-btn'>SIGN UP</button></a>
                     <a href='/login'><button type='button' className='navbar-btn'>LOG IN</button></a>
-                </> : <a href='/profile'><button type='button' className='navbar-btn'><AiOutlineUser /></button></a>
+                </> : <a href='/profile'><button type='button' className='navbar-btn navbar-btn-profile'><AiOutlineUser /></button></a>
                 }
             </div>
         </div>
