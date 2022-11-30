@@ -17,12 +17,11 @@
 }
 
 .navbar-btn-group a {
-    margin-right: 1vw;
-    
+    margin-right: 1vw;   
 }
 
 .navbar-btn {
-    min-width: 80px;
+    min-width: 90px;
     width: 6vw;
     height: 5vh;
     border-radius: 5px;

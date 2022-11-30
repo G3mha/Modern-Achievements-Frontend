@@ -66,7 +66,7 @@ function LogIn({setIsLogged, isLogged}) {
                     <input type='password' name='password' placeholder='Password' /><br />
                     <div className='login-column-wrapper'>
                         <a className='login-redirect-link' href='/signup'>Create account</a>
-                        <button className='login-btn-submit' type='submit'>Log In</button>
+                        <button className='login-btn-submit' type='submit'>LOG IN</button>
                     </div>
                 </form>
             </div>}

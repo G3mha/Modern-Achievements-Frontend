@@ -36,6 +36,11 @@ function NavBar({loggedIn}) {
         }
     };
 
+    function handleLogOut(e) {
+        localStorage.removeItem('token');
+        localStorage.removeItem('username');
+    }
+
     return (
         <div className='navbar'>
             <a href='/'><img className='navbar-logo' src={Logo} alt='logo' /></a>
@@ -46,7 +51,9 @@ function NavBar({loggedIn}) {
                 {!loggedIn ? <div className='navbar-btn-group'>
                     <a href='/signup'><button type='button' className='navbar-btn'>SIGN UP</button></a>
                     <a href='/login'><button type='button' className='navbar-btn'>LOG IN</button></a>
-                </div> : <div className='navbar-btn-group'><a href='/profile'><button type='button' className='navbar-btn navbar-btn-profile'><AiOutlineUser /></button></a></div>}
+                </div> : <div className='navbar-btn-group'>
+                    <a href='/profile'><button type='button' className='navbar-btn navbar-btn-profile'><AiOutlineUser /></button></a>
+                    <a href='/'><button type='button' onClick={(e)=>handleLogOut(e)} className='navbar-btn'>LOG OUT</button></a></div>}
         </div>
     );
 }

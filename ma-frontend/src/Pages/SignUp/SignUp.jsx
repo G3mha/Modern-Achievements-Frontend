@@ -97,7 +97,7 @@ function SignUp({setIsLogged, isLogged}) {
                     <input className='signup-large-input' type='text' name='steam_username' placeholder='Steam Username' />
                     <div className='signup-column-wrapper'>
                         <a className='signup-redirect-link' href='/login'>Log in instead</a>
-                        <button className='signup-btn-submit' type='submit'>Create</button>
+                        <button className='signup-btn-submit' type='submit'>CREATE</button>
                     </div>
                 </form>
             </div>}
