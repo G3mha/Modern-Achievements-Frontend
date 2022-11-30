@@ -16,17 +16,17 @@
     padding: 1vh;
 }
 
-.navbar-btn-group {
-    padding-right: 3vh;
+.navbar-btn-group a {
+    margin-right: 1vw;
+    
 }
 
 .navbar-btn {
-    min-width: 40px;
+    min-width: 80px;
     width: 6vw;
     height: 5vh;
     border-radius: 5px;
     border: 1px solid #9a36ff !important;
-    font-weight: bold;
     color: #9a36ff;
     background-color: white;
 }
@@ -37,9 +37,11 @@
 }
 
 .navbar-btn-search {
+    min-width: 40px !important;
     width: 4vw !important;
 }
 
 .navbar-btn-profile {
+    min-width: 40px !important;
     width: 2vw !important;
 }
