@@ -52,6 +52,7 @@ function SignUp({setIsLogged, isLogged}) {
                 setMessage('Success!');
                 const userToken = response.data.token;
                 localStorage.setItem('token', JSON.stringify(userToken));
+                localStorage.setItem('username', JSON.stringify(username));
                 setIsLogged(true);
                 setIsLoading(false);
                 return;

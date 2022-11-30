@@ -11,13 +11,13 @@ function NavBar({loggedIn}) {
 
     // function that sends a request to the server with the search term on body
     async function handleSearch(e) {
-        setSearchTerm(e.target[0].value);
         if(e) e.preventDefault();
-        
+        setSearchTerm(e.target[0].value);
+
         if (searchTerm !== '') {
             var request = {
-                method: 'POST',
-                url: 'http://127.0.0.1:8000/api/search/',
+                method: 'GET',
+                url: 'http://127.0.0.1:8000/api/search/db/username/',
                 data: {'searchTerm': searchTerm},
                 headers: {
                     'Content-Type': 'application/json',
@@ -25,11 +25,11 @@ function NavBar({loggedIn}) {
                 },
             };
             const response = await axios(request);
-            if (response.status === 200) {
+            if (response.data.HttpStatusCode === 200) {
                 const username = response.data.user.username;
                 window.location.href = '/search/user/' + username;
             }
-            if (response.status === 404) {
+            if (response.data.HttpStatusCode !== 404) {
                 window.location.href = '/search/usernotfound';
             }
             return null;
