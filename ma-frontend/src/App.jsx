@@ -9,7 +9,7 @@ import LogIn from "./Pages/LogIn/LogIn";
 import React, { useState } from 'react';
 import SignUp from "./Pages/SignUp/SignUp";
 import Users from "./Pages/Users/Users";
-import UserNotFound from "./Pages/Users/UserNotFound";
+import Profile from "./Pages/Profile/Profile";
 
 function getLogged() {
     const tokenString = localStorage.getItem('token');
@@ -30,8 +30,8 @@ function App() {
 					<Route exact path="/" element={<Home />} />
 					<Route path="/login/" element={<LogIn isLogged={isLogged} setIsLogged={setIsLogged}/>} />
 					<Route path="/signup/" element={<SignUp isLogged={isLogged} setIsLogged={setIsLogged}/>} />
-					<Route path="/search/user" element={<Users />} />
-					<Route path="/search/usernotfound" element={<UserNotFound />} />
+					<Route path="/search/user/" element={<Users />} />
+					<Route path="/profile/" element={<Profile username={JSON.parse(localStorage.getItem('username'))} />} />
 				</Routes>
 			</BrowserRouter>
 			<StickyFooter />

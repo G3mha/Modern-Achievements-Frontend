@@ -1,0 +1,47 @@
+.profile-fullpage {
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #212529;
+}
+
+.profile h1 {
+    color: #9a36ff;
+    font-weight: bold;
+    font-size: 2.5em;
+    font-family: 'Railway', sans-serif;
+    text-align: left;
+}
+
+.profile profile-games-card {
+    color: #9a36ff;
+    font-weight: bold;
+    font-size: 2.5em;
+    font-family: 'Railway', sans-serif;
+    text-align: left;
+}
+
+.unf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    background-color: #212529;
+}
+
+.unf-john-travolta {
+    width: 60%;
+    margin-bottom: 20px;
+}
+
+.unf-title {
+    padding: 0 !important;
+    font-family: 'Raleway', sans-serif;
+    font-size: 10vh;
+    color: #9a36ff;
+    font-weight: bold;
+}

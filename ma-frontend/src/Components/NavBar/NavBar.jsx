@@ -30,7 +30,7 @@ function NavBar({loggedIn}) {
                 window.location.href = '/search/user/' + username;
             }
             if (response.data.HttpStatusCode !== 404) {
-                window.location.href = '/search/usernotfound';
+                // window.location.href = '/search/usernotfound';
             }
             return null;
         }

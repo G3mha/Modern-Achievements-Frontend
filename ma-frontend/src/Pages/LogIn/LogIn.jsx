@@ -71,7 +71,7 @@ function LogIn({setIsLogged, isLogged}) {
                 </form>
             </div>}
             {isLogged && <div className='login-success'>
-                <h1 className='login-success-title'>Welcome back, {String(localStorage.getItem('username')).substring(1).slice(0,-1)}!</h1>
+                <h1 className='login-success-title'>Welcome back, {JSON.parse(localStorage.getItem('username'))}!</h1>
                 <img className='login-success-gif' src={LogInSuccessGIF} alt='Login Success' />
             </div>}
         </div>
