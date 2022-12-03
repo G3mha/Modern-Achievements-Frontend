@@ -3,21 +3,26 @@
     width: 100vw;
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    background-color: #212529;
+    background-color: white;
+    overflow: auto;
 }
 
-.profile h1 {
+.profile-fullpage h1 {
+    margin-left: 20px;
     color: #9a36ff;
     font-weight: bold;
-    font-size: 2.5em;
+    font-size: 5em;
     font-family: 'Railway', sans-serif;
     text-align: left;
 }
 
-.profile profile-games-card {
-    color: #9a36ff;
+.profile-games-card {
+    margin-left: 60px;
+    margin-bottom: 20px;
+}
+
+.profile-games-card h3 {
+    color: #212529;
     font-weight: bold;
     font-size: 2.5em;
     font-family: 'Railway', sans-serif;

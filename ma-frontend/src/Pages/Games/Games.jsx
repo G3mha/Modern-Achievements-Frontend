@@ -22,8 +22,6 @@ function Games() {
 
     const gameList = getGames();
 
-
-    
     return (
         <div className='games-fullpage'>
             <div className='games-grid'>

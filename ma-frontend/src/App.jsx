@@ -31,7 +31,7 @@ function App() {
 					<Route path="/login/" element={<LogIn isLogged={isLogged} setIsLogged={setIsLogged}/>} />
 					<Route path="/signup/" element={<SignUp isLogged={isLogged} setIsLogged={setIsLogged}/>} />
 					<Route path="/search/user/" element={<Users />} />
-					<Route path="/profile/" element={<Profile username={JSON.parse(localStorage.getItem('username'))} />} />
+					<Route path="/profile/" element={<Profile />} />
 				</Routes>
 			</BrowserRouter>
 			<StickyFooter />
