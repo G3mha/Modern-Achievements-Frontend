@@ -6,14 +6,11 @@ import Logo from '../../Images/Logo.png';
 
 
 function NavBar({loggedIn}) {
-    const [searchTerm, setSearchTerm] = useState('');
-
+    
     // function that sends a request to the server with the search term on body
-    async function handleSearch(e) {
+    function handleSearch(e) {
         if(e) e.preventDefault();
-        setSearchTerm(e.target[0].value);
-        console.log(searchTerm);
-        localStorage.setItem('search', JSON.stringify(searchTerm));
+        localStorage.setItem('search', JSON.stringify(e.target[0].value));
         window.location.href = '/profile/';
     };
 
