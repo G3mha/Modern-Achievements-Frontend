@@ -19,6 +19,7 @@ function SignUp({setIsLogged, isLogged}) {
     const [isLoading, setIsLoading] = useState('');
 
     async function handleSignUp(e) {
+        console.log(e);
         if(e) e.preventDefault();
         setFirstName(e.target[0].value);
         setLastName(e.target[1].value);
