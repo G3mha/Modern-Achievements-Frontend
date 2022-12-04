@@ -1,0 +1,17 @@
+.loading-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100vw;
+    background-color: white;
+}
+
+
+.loading-message {
+    text-align: center;
+    font-size: 3vh;
+    font-weight: bold;
+    color: #9a36ff;
+}

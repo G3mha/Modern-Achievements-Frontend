@@ -88,23 +88,6 @@
     text-decoration: none;
 }
 
-.loading-page {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    width: 100vw;
-    background-color: white;
-}
-
-
-.loading-message {
-    font-size: 3vh;
-    font-weight: bold;
-    color: #9a36ff;
-}
-
 .signup-success {
     display: flex;
     flex-direction: column;

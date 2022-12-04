@@ -13,32 +13,14 @@ function NavBar({loggedIn}) {
     async function handleSearch(e) {
         if(e) e.preventDefault();
         setSearchTerm(e.target[0].value);
-
-        if (searchTerm !== '') {
-            var request = {
-                method: 'GET',
-                url: 'http://127.0.0.1:8000/api/search/db/username/',
-                data: {'searchTerm': searchTerm},
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json',
-                },
-            };
-            const response = await axios(request);
-            if (response.data.HttpStatusCode === 200) {
-                const username = response.data.user.username;
-                window.location.href = '/search/user/' + username;
-            }
-            if (response.data.HttpStatusCode !== 404) {
-                // window.location.href = '/search/usernotfound';
-            }
-            return null;
-        }
+        console.log(searchTerm);
+        localStorage.setItem('search', JSON.stringify(searchTerm));
+        window.location.href = '/profile/';
     };
 
     function handleLogOut(e) {
-        localStorage.removeItem('token');
-        localStorage.removeItem('username');
+        localStorage.clear();
+        window.location.href = '/';
     }
 
     return (
@@ -52,7 +34,7 @@ function NavBar({loggedIn}) {
                     <a href='/signup'><button type='button' className='navbar-btn'>SIGN UP</button></a>
                     <a href='/login'><button type='button' className='navbar-btn'>LOG IN</button></a>
                 </div> : <div className='navbar-btn-group'>
-                    <a href='/profile'><button type='button' className='navbar-btn navbar-btn-profile'><AiOutlineUser /></button></a>
+                    <a href='/myprofile'><button type='button' className='navbar-btn navbar-btn-profile'><AiOutlineUser /></button></a>
                     <a href='/'><button type='button' onClick={(e)=>handleLogOut(e)} className='navbar-btn'>LOG OUT</button></a></div>}
         </div>
     );

@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import './SignUp.css';
 import Logo from "../../Images/Logo.png";
 import SteamLogo from "../../Images/SteamLogo.png";
-import Loader from "../../Images/Loader.gif";
 import axios from 'axios';
 import SignupSuccessGIF from '../../Images/SignupSuccess.gif';
+import Loading from '../../Components/Loading/Loading';
 
 function SignUp({setIsLogged, isLogged}) {
     const [firstName, setFirstName] = useState('');
@@ -69,11 +69,7 @@ function SignUp({setIsLogged, isLogged}) {
 
     return (
         <div className='signup-fullpage'>
-            {isLoading && <div className='loading-page'>
-                <img className='loading-icon' src={Loader} alt='logo' />
-                <h1 className='loading-message'>Loading your Steam Account data...</h1>
-                <h1 className='loading-message'>Please, do not close or recharge this page until the upload is completed.</h1>
-            </div>}
+            {isLoading && <Loading isLoadingSteam={true} />}
             {!isLoading && !isLogged && <div className='signup-flex'>
                 <img src={Logo} alt='logo' style={{height: '50px', width: '50px'}} />
                 <h1>Create your account</h1>
