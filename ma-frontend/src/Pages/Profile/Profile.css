@@ -2,7 +2,7 @@
     height: 80vh;
     width: 100vw;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: white;
     overflow: auto;
 }
@@ -53,4 +53,9 @@
 
 .progress-bar {
     background-color: #9a36ff !important;
+}
+
+.progress {
+    height: 30px !important;
+    width: 90vw !important;
 }

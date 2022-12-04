@@ -41,7 +41,6 @@ function Profile({username}) {
 
     return (
         <div>
-            {isLoading && <Loading isLoadingSteam={false} />}
             {!isLoading && isUserFound && 
                 <div className='profile-user-found'>
                     <div className='profile-fullpage'>
@@ -59,6 +58,7 @@ function Profile({username}) {
                     </div>
                 </div>
             }
+            {isLoading && <Loading isLoadingSteam={false} />}
             {!isLoading && !isUserFound &&
                 <div className='unf'>
                     <h1 className='unf-title'>User not found</h1>
