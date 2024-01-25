@@ -1,0 +1,27 @@
+.footer {
+    background-color: #EEEEEE;
+    position: fixed;
+    padding-left: 30%;
+    padding-right: 30%;
+    bottom: 0;
+    width: 100%;
+    text-align: left;
+}
+
+.primary {
+    padding-top: 10px;
+    padding-bottom: 0px;
+    color: #1F1F1F;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 15px;
+}
+
+.secondary {
+    color: #5F5F5F;
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 10px;
+}
+
+.footer-link {
+    color: #5F5F5F;
+}
