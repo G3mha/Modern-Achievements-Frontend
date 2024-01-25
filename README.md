@@ -1,23 +1,9 @@
-# Projeto 3 Modern Achievements
-by Enricco Gemha e Pedro Barão
+# Modern Achievements - Frontend
 
-Para obter os jogos da Steam, você deverá fazer os seguintes passos:
-  Clicar no ícone de usuário >> *Meu perfil* >> *Config. privacidade* >> *Privacidade de jogos* >> *Pública*
+Project developed by Enricco Gemha.
 
-Vídeo demonstrando funcionalidades do site: https://youtu.be/nq-Y2Bx_B-g
+Video demonstrating the features of this project: [YouTube video](https://youtu.be/nq-Y2Bx_B-g).
 
-FrontEnd link: https://github.com/G3mha/projeto-3-frontend.git
+## What's the project?
 
-
-## Funcionalidades do projeto:
-O projeto é um site capaz de mostrar a porcentagem dos *achievements* nos jogos de um usuário da steam (com perfil público). O site foi construído com Front-end em React e Back-end em Django.
-
-  - Os *achievements* serão coletados e atualizados por uma API externa da Steam e salvos no backend, durante o signup
-  - O usuário poderá ver os *achievements* de todos os jogos que ele possui na steam
-  - O usuário poderá ver os *achievements* de outros usuários pela barra de pesquisa
-  - Login com autenticação de usuário
-  - Uso do CSS e Bootstrap
-## Prazos de entrega:
-  - (17/11) Back-end com *models* dos achievements seguindo o padrão da API utilizada
-  - (24/11) Front-end das telas com css
-  - (01/12) Autenticação de usuário, otimização e mudanças necessárias
+This is the 2-part repository that, in this case, contains the hosted website source code, in React, for the Modern Achievements application. The website is capable of show the percentages of total achievements conquered by the user in his Steam games, if it's a public profile.
