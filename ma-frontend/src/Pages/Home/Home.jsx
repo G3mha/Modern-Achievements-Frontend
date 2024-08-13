@@ -1,28 +1,26 @@
 import React, { Component } from 'react';
-import './Home.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Toon from '../../Images/Toon.png';
+import Title from '../../Images/title.svg';
 
 
 class Home extends Component {
-    render() {
-        return (
-            <div className='text-block'>
-                <br />
-                <br />
-                <h1 className='retro gradient-text-green'>Modern</h1>
-                <h1 className='retro gradient-text-green'>Achievements</h1>
-                <br />
-                <p className='right-align modern gradient-text-purple'>
-                    (re)defining the way we play video games.
-                </p>
-                <br />
-                <p className='left-align modern gradient-text-purple'>
-                    join us in this mission right now! <img src={Toon} alt='8bit toon' style={{height: '150px', width: '150px'}}></img>
-                </p>
-            </div>
-        );
-    }
+  render() {
+    return (
+
+      <div className='bg-black text-secondary font-raleway font-bold text-6xl'>
+        <br />
+        <br />
+        <img src={Title} alt='logo' className='w-50 self-center' />
+        <br />
+        <p>
+          (re)defining the way we play video games.
+        </p>
+        <br />
+        <p>
+          join us in this mission right now!
+        </p>
+      </div>
+    );
+  }
 }
 
 export default Home;
